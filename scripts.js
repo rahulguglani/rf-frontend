@@ -36,8 +36,8 @@ document.getElementById('uploadForm').addEventListener('submit', async (event) =
 
   // Parse response JSON and display file details
   const data = await response.json();
-  originalName.textContent = data.fileInfo.originalName;
-  fileSize.textContent = data.fileInfo.size;
-  mimeType.textContent = data.fileInfo.mimeType;
+  originalName.textContent = data.details.originalName;
+  fileSize.textContent = data.details.size;
+  mimeType.textContent = data.details.mimeType;
   infoContainer.style.display = 'block';
 });
