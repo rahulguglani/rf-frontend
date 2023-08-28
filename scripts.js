@@ -1,28 +1,28 @@
 // Get elements from the HTML document
 const selectFileButton = document.getElementById('selectFileButton');
 const fileInput = document.getElementById('fileInput');
+
+// Listen for the "Select a file" button click
+selectFileButton.addEventListener('click', () => {
+    fileInput.click();
+  });
+  
 const selectedFileName = document.getElementById('selectedFileName');
 const uploadButtonContainer = document.getElementById('uploadButtonContainer');
 const fileInfoContainer = document.getElementById('fileInfoContainer');
 const infoContainer = document.getElementById('infoContainer');
-const originalName = document.getElementById('originalName');
-const fileSize = document.getElementById('fileSize');
-const mimeType = document.getElementById('mimeType');
-
-// Listen for the "Select a file" button click
-selectFileButton.addEventListener('click', () => {
-  fileInput.click();
-});
-
 // Listen for file selection
 fileInput.addEventListener('change', () => {
-  if (fileInput.files.length > 0) {
-    selectedFileName.textContent = fileInput.files[0].name;
-    fileInfoContainer.style.display = 'block';
-    uploadButtonContainer.style.display = 'block';
-  }
-});
-
+    if (fileInput.files.length > 0) {
+      selectedFileName.textContent = fileInput.files[0].name;
+      fileInfoContainer.style.display = 'block';
+      uploadButtonContainer.style.display = 'block';
+    }
+  });
+  
+const originalName = document.getElementById('originalName');
+const fileSize = document.getElementById('fileSize');
+const mimeType = document.getElementById('mimeType');  
 // Listen for form submission
 document.getElementById('uploadForm').addEventListener('submit', async (event) => {
   event.preventDefault();
